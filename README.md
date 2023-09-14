@@ -18,10 +18,10 @@ Usage
 ```lua
 require('cmp').setup({
   sources = {
-    { 
-        name = yank ,
-        -- you can specify the directory to save yank history (optional)
-        yank_source_path = vim.getenv('HOME') .. '/dotfiles/history'
+    {
+       name = 'yank',
+       -- you can specify the directory to save yank history (optional)
+       yank_source_path = vim.getenv('HOME') .. '/dotfiles/history'
     },
   }
 })
