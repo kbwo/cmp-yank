@@ -33,7 +33,7 @@ function M.slice_array(arr, startIdx, endIdx)
 end
 
 function M.start_with(inputString, prefix)
-  return string.sub(inputString, 1, string.len(prefix)) == prefix
+  return inputString:sub(1, #prefix) == prefix
 end
 
 function M.byte_slice(content, startByte, endByte)
