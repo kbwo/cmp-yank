@@ -9,7 +9,6 @@ function source.new()
 end
 
 function source.complete(self, request, callback)
-  print('called')
   local limit = 3
   local items = db.load()
   ---@type string
@@ -20,7 +19,7 @@ function source.complete(self, request, callback)
     if o.regtype == "^V" then
       return false
     end
-    return o.filetype == vim.bo.filetype and util.start_with(util.trim_string(o.content[1]), input)
+    return o.filetype == vim.bo.filetype and util.start_with(util.trim_string(o.content[1]), util.trim_string(input))
   end)
 
   items = util.slice_array(items, 0, limit)
