@@ -56,7 +56,7 @@ function handleYankPost()
     if util.start_with(regtype, "\x16") then
       local view = vim.fn.winsaveview()
       vim.fn.setpos(".", { 0, lnum, col, 0 })
-      for i = lnum, string.len(regcontents) do
+      for i = lnum + 1, #regcontents do
         local linePos = vim.fn.getline(i - 1)
         local startCharacter = string.len(util.byte_slice(linePos, 0, col - 1))
         local endCharacter = startCharacter + string.len(regcontents[i - lnum])
