@@ -41,7 +41,7 @@ function source.complete(self, request, callback)
     local insertText = util.join(lines, "\n")
     return {
       insertText,
-      label = util.trim_string(item.content[1]),
+      label = insertText,
       kind = cmp.lsp.CompletionItemKind.Snippet,
       documentation = {
         kind = 'markdown',
